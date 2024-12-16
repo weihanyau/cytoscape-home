@@ -18,36 +18,9 @@ import { NDEx } from "@js4cytoscape/ndex-client";
 import Cytoscape from "cytoscape";
 import PropTypes from "prop-types";
 import { useEffect, useRef, useState } from "react";
+import { fetchGeneMetadata, fetchGeneManiaNetwork } from './tools/geneServices';
 
 const ndexClient = new NDEx("https://www.ndexbio.org/v2");
-
-async function fetchGeneManiaNetwork(genes, organismId = 4) {
-  try {
-    const baseUrl = "https://genemania.org/json/search_results";
-    const response = await fetch(`${baseUrl}`, {
-      method: "POST",
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        organism: organismId,
-        genes: genes,
-        weighting: "AUTOMATIC_SELECT",
-        geneThreshold: genes.length === 1 ? 0 : 20,
-        attrThreshold: 0,
-      }),
-    });
-    if (!response.ok) {
-      throw new Error(`HTTP error! Status: ${response.status}`);
-    }
-    const json = await response.json();
-    return json;
-  } catch (error) {
-    console.error("Error:", error.message);
-    return { error: { message: error.message } };
-  }
-}
 
 const createCytoscape = (id) => {
   const container = document.getElementById(id);
