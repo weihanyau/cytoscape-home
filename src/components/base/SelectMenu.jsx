@@ -48,17 +48,15 @@ export function SelectMenu({
           <div className="relative mt-2">
             <ListboxButton className={buttonClassName}>
               <span className="flex items-center">
-                {selected ? (
+                {selected && (
                   <>
                     <img
-                      src={selected.image}
+                      src={selected?.image ?? ""}
                       alt=""
                       className="h-6 w-6 flex-shrink-0 rounded-full saturate-0"
                     />
                     <span className="ml-3 block truncate">{selected.name}</span>
                   </>
-                ) : (
-                  <>&nbsp;</>
                 )}
               </span>
               <span className="pointer-events-none absolute inset-y-0 right-0 ml-3 flex items-center pr-2">
