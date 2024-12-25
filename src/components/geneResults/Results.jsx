@@ -1,6 +1,6 @@
 import { DialogTitle } from "@headlessui/react";
 import { XMarkIcon } from "@heroicons/react/24/outline";
-import { Modal } from "./base/Modal";
+import { Modal } from "../base/Modal";
 import GeneDetails from "./GeneDetails";
 
 export function Results({ open = false, data, onClose }) {
