@@ -5,7 +5,7 @@ import { ArrowTopRightOnSquareIcon, ExclamationTriangleIcon } from "@heroicons/r
 import { LinkButton } from "@/components/base/Button";
 import { LoadingMessage } from "@/components/base/Loading";
 import Cytoscape from "cytoscape";
-import { fetchGeneManiaNetwork, createCytoscape } from "@/utils/geneManiaUtils";
+import { fetchGeneManiaNetwork, createCytoscape } from "./utilities/geneManiaUtils";
 
 const GeneManiaCard = ({ genes, organism }) => {
   const [data, setData] = useState();
