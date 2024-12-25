@@ -1,26 +1,5 @@
-import { LinkButton } from "@/components/base/Button";
-import { LoadingMessage } from "@/components/base/Loading";
-import GeneManiaLogo from "@/images/logos/gene-mania.svg";
-import NDExLogo from "@/images/logos/ndex.svg";
-import {
-  Dialog,
-  DialogPanel,
-  DialogTitle,
-  Transition,
-  TransitionChild,
-} from "@headlessui/react";
-import {
-  ArrowTopRightOnSquareIcon,
-  ExclamationTriangleIcon,
-} from "@heroicons/react/20/solid";
+import { DialogTitle } from "@headlessui/react";
 import { XMarkIcon } from "@heroicons/react/24/outline";
-import { NDEx } from "@js4cytoscape/ndex-client";
-import Cytoscape from "cytoscape";
-import PropTypes from "prop-types";
-import { useEffect, useRef, useState } from "react";
-import { useModal } from "./context/ModalContext";
-import GeneManiaCard from "./GeneManiaCard";
-import NDExCard from "./NDExCard";
 import { Modal } from "./base/Modal";
 import GeneDetails from "./GeneDetails";
 
