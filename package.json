@@ -45,13 +45,13 @@
     "vite-plugin-svgr": "^4.3.0"
   },
   "lint-staged": {
-    "*.jsx": [
-      "eslint --fix",
-      "prettier-eslint --write"
-    ],
     "*.js": [
       "eslint --fix",
-      "prettier-eslint --write"
+      "prettier --write"
+    ],
+    "*.jsx": [
+      "eslint --fix",
+      "prettier --write"
     ]
   }
 }
