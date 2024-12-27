@@ -3,7 +3,6 @@ import Cytoscape from "cytoscape";
 
 export async function fetchGeneManiaNetwork(genes, organismId = 4) {
     try {
-        console.log("called")
       const baseUrl = "https://genemania.org/json/search_results";
       const response = await axios.post(baseUrl, {
           organism: organismId,
