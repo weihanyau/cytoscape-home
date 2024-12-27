@@ -10,12 +10,7 @@ export async function fetchGeneManiaNetwork(genes, organismId = 4) {
           weighting: "AUTOMATIC_SELECT",
           geneThreshold: genes.length === 1 ? 0 : 20,
           attrThreshold: 0,
-        }, {
-        headers: {
-          Accept: "application/json",
-          "Content-Type": "application/json",
-        },
-      });
+        });
       if (response.data.error) {
         throw new Error(response.data.error);
       }
