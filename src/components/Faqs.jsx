@@ -1,49 +1,5 @@
 import { Container } from '@/components/base/Container';
-
-const faqs = [
-    [
-        {
-            question: 'Lorem ipsum dolor sit amet?',
-            answer: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eget nunc nec nibh dapibus facilisis eu vitae nibh. Nulla facilisi. Quisque ullamcorper maximus consectetur.',
-        },
-        {
-            question: 'Ut sed sem id nulla consequat porttitor et sed dolor?',
-            answer: 'Donec dignissim nisi eu efficitur vulputate. Nullam accumsan, nisi accumsan dictum rhoncus, augue leo vehicula odio, ac ultrices orci nunc nec lorem. Nullam at malesuada magna, quis rutrum magna.',
-        },
-        {
-            question: 'Vestibulum hendrerit neque quis cursus elementum?',
-            answer: 'Maecenas quis eros molestie, fringilla erat at, hendrerit erat. Morbi placerat, eros pretium lacinia feugiat, dolor arcu facilisis metus, placerat cursus nibh neque in orci.',
-        },
-    ],
-    [
-        {
-            question: 'Lorem ipsum dolor sit amet consectetur adipiscing elit?',
-            answer: 'Ut vulputate feugiat nunc in finibus. Nunc lorem magna, pharetra a neque quis, tristique cursus sem. Quisque dignissim vestibulum lacus. ',
-        },
-        {
-            question: 'Etiam vitae nunc vel velit volutpat cursus?',
-            answer: 'Donec tortor elit, efficitur sit amet neque a, placerat efficitur tortor.',
-        },
-        {
-            question: 'Sed eu elit quis ligula cursus lacinia?',
-            answer: 'Ut id felis pulvinar, dapibus elit eget, finibus purus. Aenean venenatis a risus et dapibus. Nam nec magna vestibulum ante ultrices aliquam. Nam mauris metus, consectetur nec purus nec, molestie accumsan neque. Etiam commodo sagittis massa eu sagittis.',
-        },
-    ],
-    [
-        {
-            question: 'Ut aliquam nulla bibendum finibus semper?',
-            answer: 'Cras ipsum lorem, facilisis ut pellentesque a, sagittis faucibus dui. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
-        },
-        {
-            question: 'Donec quis urna convallis?',
-            answer: 'Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; In luctus luctus leo eu egestas.',
-        },
-        {
-            question: 'Sed eget ante vestibulum?',
-            answer: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eget nunc nec nibh dapibus facilisis eu vitae nibh. Proin vehicula turpis ipsum, sed sodales massa tristique a. Nam arcu eros, convallis a ligula quis, consectetur vehicula purus.',
-        },
-    ],
-];
+import faqs from '../data/faqs.json';
 
 export function Faqs() {
     return (
