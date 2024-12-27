@@ -6,7 +6,7 @@ import { PrimaryFeatures } from "@/components/PrimaryFeatures";
 import { Citations } from "@/components/Citations";
 import { SecondaryFeatures } from "@/components/SecondaryFeatures";
 import { Guide } from "@/components/Guide";
-import { Results } from "@/components/Results";
+import { Results } from "@/components/geneResults/Results";
 
 export default function Home() {
   const [openGuide, setOpenGuide] = useState(false);
