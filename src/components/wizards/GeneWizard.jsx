@@ -1,117 +1,130 @@
-import { useState, useRef, useEffect } from 'react'
-import { SelectMenu } from '@/components/base/SelectMenu'
-import { geneManiaOrganisms, parseGeneList } from '@/components/tools/Common'
-import PropTypes from "prop-types";
+import { useState, useRef, useEffect } from 'react';
+import { SelectMenu } from '@/components/base/SelectMenu';
+import { geneManiaOrganisms, parseGeneList } from '@/components/tools/Common';
+import PropTypes from 'prop-types';
 
 const stepsDef = [
-  {
-    title: "Genes",
-    component: GenesPanel,
-  },
-  {
-    title: "Organisms",
-    component: OrganismsPanel,
-  },
-]
+    {
+        title: 'Genes',
+        component: GenesPanel,
+    },
+    {
+        title: 'Organisms',
+        component: OrganismsPanel,
+    },
+];
 
 function GenesPanel({ onChange }) {
-  const [value, setValue] = useState('')
+    const [value, setValue] = useState('');
 
-  const handleChange = (event) => {
-    let val = event.target.value
-    setValue(val)
-    val = val.trim()
-    let genes = []
-    if (val.length > 0) {
-      genes = parseGeneList(val)
-    }
-    onChange(genes)
-  }
+    const handleChange = (event) => {
+        let val = event.target.value;
+        setValue(val);
+        val = val.trim();
+        let genes = [];
+        if (val.length > 0) {
+            genes = parseGeneList(val);
+        }
+        onChange(genes);
+    };
 
-  return (
-    <div>
-      <label htmlFor="genes" className="block text-sm font-medium leading-6 text-gray-900">
-        Enter one or more gene names:
-      </label>
-      <div className="mt-2">
-        <textarea
-          rows={7}
-          name="genes"
-          id="genes"
-          value={value}
-          className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-complement-500 sm:text-sm sm:leading-5"
-          onChange={handleChange}
-        />
-      </div>
-    </div>
-  )
+    return (
+        <div>
+            <label
+                htmlFor="genes"
+                className="block text-sm font-medium leading-6 text-gray-900"
+            >
+                Enter one or more gene names:
+            </label>
+            <div className="mt-2">
+                <textarea
+                    rows={7}
+                    name="genes"
+                    id="genes"
+                    value={value}
+                    className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-complement-500 sm:text-sm sm:leading-5"
+                    onChange={handleChange}
+                />
+            </div>
+        </div>
+    );
 }
 GenesPanel.propTypes = {
-  onChange: PropTypes.func.isRequired,
-}
+    onChange: PropTypes.func.isRequired,
+};
 
 function OrganismsPanel({ onChange }) {
-  return (
-    <div>
-      <label htmlFor="organism" className="block text-sm font-medium leading-6 text-gray-900">
-        Select the organism:
-      </label>
-      <SelectMenu data={geneManiaOrganisms} onChange={onChange} className="min-w-64" />
-    </div>
-  )
+    return (
+        <div>
+            <label
+                htmlFor="organism"
+                className="block text-sm font-medium leading-6 text-gray-900"
+            >
+                Select the organism:
+            </label>
+            <SelectMenu
+                data={geneManiaOrganisms}
+                onChange={onChange}
+                className="min-w-64"
+            />
+        </div>
+    );
 }
 OrganismsPanel.propTypes = {
-  onChange: PropTypes.func.isRequired,
-}
+    onChange: PropTypes.func.isRequired,
+};
 
 export function GeneWizard({ step, setTotalSteps, setTitle, onCanContinue, onSubmit }) {
-  const genesRef = useRef([])
-  const orgRef = useRef()
+    const genesRef = useRef([]);
+    const orgRef = useRef();
 
-  useEffect(() => {
-    if (step >= 0 && step < stepsDef.length) {
-      setTotalSteps(stepsDef.length)
-      setTitle(stepsDef[step].title)
-    }
-    switch (step) {
-      case 0:
-        onCanContinue(genesRef.current.length > 0)
-        break
-      case 1:
-        onCanContinue(orgRef.current != null)
-        break
-      case 2:
-        onSubmit({ type: 'gene', title: 'Gene Analysis', genes: genesRef.current, organism: orgRef.current })
-    }
-  })
+    useEffect(() => {
+        if (step >= 0 && step < stepsDef.length) {
+            setTotalSteps(stepsDef.length);
+            setTitle(stepsDef[step].title);
+        }
+        switch (step) {
+            case 0:
+                onCanContinue(genesRef.current.length > 0);
+                break;
+            case 1:
+                onCanContinue(orgRef.current != null);
+                break;
+            case 2:
+                onSubmit({ type: 'gene', title: 'Gene Analysis', genes: genesRef.current, organism: orgRef.current });
+        }
+    });
 
-  const handleChange = (value) => {
-    switch (step) {
-      case 0:
-        genesRef.current = value
-        onCanContinue(value.length > 0)
-        break
-      case 1:
-        orgRef.current = value
-        onCanContinue(value != null)
-        break
-    }
-  }
+    const handleChange = (value) => {
+        switch (step) {
+            case 0:
+                genesRef.current = value;
+                onCanContinue(value.length > 0);
+                break;
+            case 1:
+                orgRef.current = value;
+                onCanContinue(value != null);
+                break;
+        }
+    };
 
-  return (
-    <div className="min-h-48">
-      {stepsDef.map(({ component: Comp }, idx) => (
-        <div key={idx} style={step !== idx ? {display: 'none'} : {}}>
-          <Comp onChange={handleChange} />
+    return (
+        <div className="min-h-48">
+            {stepsDef.map(({ component: Comp }, idx) => (
+                <div
+                    key={idx}
+                    style={step !== idx ? { display: 'none' } : {}}
+                >
+                    <Comp onChange={handleChange} />
+                </div>
+            ))}
         </div>
-      ))}
-    </div>
-  )
+    );
 }
 GeneWizard.propTypes = {
-  step: PropTypes.number.isRequired,
-  setTotalSteps: PropTypes.func.isRequired,
-  setTitle: PropTypes.func.isRequired,
-  onCanContinue: PropTypes.func.isRequired,
-  onSubmit: PropTypes.func.isRequired,
+    step: PropTypes.number.isRequired,
+    setTotalSteps: PropTypes.func.isRequired,
+    setTitle: PropTypes.func.isRequired,
+    onCanContinue: PropTypes.func.isRequired,
+    onSubmit: PropTypes.func.isRequired,
 };

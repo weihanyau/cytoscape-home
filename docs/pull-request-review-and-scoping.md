@@ -12,10 +12,10 @@ Additionally, self-review offers insights into what was done well, what should b
 
 Peer review is crucial but should be balanced to avoid misunderstandings and maintain team synergy. Despite potential challenges, peer review is essential for team efficiency.
 
--   It allows seniors/leads to focus on more critical topics.
--   It facilitates knowledge sharing among team members, whether related to the product domain or technology.
--   It provides inspiration on different approaches to achieve tasks.
--   It highlights maintainability and readability concerns, which are important for team maintenance.
+- It allows seniors/leads to focus on more critical topics.
+- It facilitates knowledge sharing among team members, whether related to the product domain or technology.
+- It provides inspiration on different approaches to achieve tasks.
+- It highlights maintainability and readability concerns, which are important for team maintenance.
 
 Ultimately, the goal is for everyone to learn from each task daily, beyond just fulfilling business needs.
 
@@ -29,20 +29,20 @@ Utilize this TODO list to benefit the team by breaking down changes into smaller
 
 Separate items that could be distractions from the main feature, such as:
 
--   Module setup
--   File movement
--   Loading state, error state, empty state
--   Additional functionalities
+- Module setup
+- File movement
+- Loading state, error state, empty state
+- Additional functionalities
 
 If breaking down your PR is challenging, set smaller goals for each PR. For example, instead of a single PR for sharing PDFs (which requires displaying the PDF first), create two PRs: one for displaying the PDF and another for sharing it.
 
 These smaller PRs will ultimately lead to the same deliverable, such as the PDF sharing feature in this example.
 
-| Pros                                                                                 | Cons                                                   |
-| ------------------------------------------------------------------------------------ | ------------------------------------------------------ |
-| Smaller PRs with a clearer, more direct purpose                                      | More time spent on planning rather than actual work    |
-| Faster review process                                                                | More PRs created                                       |
-| Small yet important items won't be deprioritized                                     |
+| Pros                                             | Cons                                                |
+| ------------------------------------------------ | --------------------------------------------------- |
+| Smaller PRs with a clearer, more direct purpose  | More time spent on planning rather than actual work |
+| Faster review process                            | More PRs created                                    |
+| Small yet important items won't be deprioritized |
 
 ## How?
 

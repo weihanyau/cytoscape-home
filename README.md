@@ -43,35 +43,35 @@ To set up the development environment for Cytoscape Home, follow these steps:
 
 1. **Install Dependencies:**
 
-   Make sure all required dependencies are installed:
+    Make sure all required dependencies are installed:
 
-   ```bash
-   npm install
-   ```
+    ```bash
+    npm install
+    ```
 
 2. **Run Build Commands:**
 
-   Use the following commands based on your needs:
+    Use the following commands based on your needs:
 
-   ```bash
-   npm run <target>
-   ```
+    ```bash
+    npm run <target>
+    ```
 
-   Available targets:
+    Available targets:
 
-  - `watch` or `dev`: Starts a local development server with live-reloading and automatic builds when changes are made to the source code.
-  - `lint`: Runs ESLint to analyze the code for potential issues and ensures code consistency.
-  - `build`: Creates an optimized production build, ready for deployment.
+- `watch` or `dev`: Starts a local development server with live-reloading and automatic builds when changes are made to the source code.
+- `lint`: Runs ESLint to analyze the code for potential issues and ensures code consistency.
+- `build`: Creates an optimized production build, ready for deployment.
 
 3. **Development Server:**
 
-   To start the local development server, run:
+    To start the local development server, run:
 
-   ```bash
-   npm run dev
-   ```
+    ```bash
+    npm run dev
+    ```
 
-   This will allow you to view and interact with the project in a web browser while actively developing.
+    This will allow you to view and interact with the project in a web browser while actively developing.
 
 ## Resources
 
