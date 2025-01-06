@@ -1,27 +1,19 @@
 import Cytoscape from "cytoscape";
+import { Network } from "../../network/Network";
 
 export async function fetchGeneManiaNetwork(genes, organismId = 4) {
     try {
-      const baseUrl = "https://genemania.org/json/search_results";
-      const response = await fetch(`${baseUrl}`, {
-        method: "POST",
-        headers: {
-          Accept: "application/json",
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
+      const response = await Network.post("/search_results", {
           organism: organismId,
           genes: genes,
           weighting: "AUTOMATIC_SELECT",
           geneThreshold: genes.length === 1 ? 0 : 20,
           attrThreshold: 0,
-        }),
-      });
-      if (!response.ok) {
-        throw new Error(`HTTP error! Status: ${response.status}`);
+        });
+      if (response.data.error) {
+        throw new Error(response.data.error);
       }
-      const json = await response.json();
-      return json;
+      return response.data;
     } catch (error) {
       console.error("Error:", error.message);
       return { error: { message: error.message } };
