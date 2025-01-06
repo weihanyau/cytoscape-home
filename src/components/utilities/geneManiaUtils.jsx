@@ -1,10 +1,9 @@
-import axios from "axios";
 import Cytoscape from "cytoscape";
+import { Network } from "../../network/Network";
 
 export async function fetchGeneManiaNetwork(genes, organismId = 4) {
     try {
-      const baseUrl = "https://genemania.org/json/search_results";
-      const response = await axios.post(baseUrl, {
+      const response = await Network.post("/search_results", {
           organism: organismId,
           genes: genes,
           weighting: "AUTOMATIC_SELECT",
