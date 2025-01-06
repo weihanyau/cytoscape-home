@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { AppScreen } from "../AppScreen";
 import { bodyAnimation, headerAnimation } from "../utilities/animationConfigs";
 import {
@@ -69,4 +70,8 @@ export const ImportScreen = (props) => {
       </MotionAppScreenBody>
     </AppScreen>
   );
+};
+ImportScreen.propTypes = {
+  animated: PropTypes.bool,
+  custom: PropTypes.any,
 };

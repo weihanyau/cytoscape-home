@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { AppScreen } from "../AppScreen";
 import { bodyAnimation, headerAnimation } from "../utilities/animationConfigs";
 import {
@@ -18,5 +19,10 @@ export const ExportScreen = (props) => {
         <div className="divide-y divide-gray-100"></div>
       </MotionAppScreenBody>
     </AppScreen>
-  );
+  )
+};
+
+ExportScreen.propTypes = {
+  animated: PropTypes.bool,
+  custom: PropTypes.any,
 };

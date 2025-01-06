@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useMemo, useRef, useState } from 'react'
+import { useMemo, useRef } from 'react'
 import clsx from 'clsx'
 import { useInView } from 'framer-motion'
 import PropTypes from "prop-types";
