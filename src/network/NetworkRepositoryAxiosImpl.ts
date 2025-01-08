@@ -10,7 +10,7 @@ export class NetworkRepositoryAxiosImpl implements NetworkRepository {
         this.#baseURL = baseURL;
         this.#instance = axios.create({
             baseURL,
-            timeout: 15000
+            timeout: 15000,
         });
     }
 
