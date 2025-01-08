@@ -1,5 +1,6 @@
 import { DialogTitle } from "@headlessui/react";
 import { XMarkIcon } from "@heroicons/react/24/outline";
+import PropTypes from 'prop-types';
 import { Modal } from "../base/Modal";
 import GeneDetails from "./GeneDetails";
 
@@ -31,3 +32,15 @@ export function Results({ open = false, data, onClose }) {
     </Modal>
   );
 }
+
+Results.propTypes = {
+  open: PropTypes.bool,
+  data: PropTypes.shape({
+    type: PropTypes.string,
+    title: PropTypes.string,
+    genes: PropTypes.arrayOf(PropTypes.string),
+    organism: PropTypes.string,
+  }),
+  onClose: PropTypes.func.isRequired,
+};
+
