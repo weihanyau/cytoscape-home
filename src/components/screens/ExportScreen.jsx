@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { AppScreen } from '../AppScreen';
 import { bodyAnimation, headerAnimation } from '../utilities/animationConfigs';
 import { MotionAppScreenBody, MotionAppScreenHeader } from '../utilities/appScreenConfig';
@@ -17,4 +18,9 @@ export const ExportScreen = (props) => {
             </MotionAppScreenBody>
         </AppScreen>
     );
+};
+
+ExportScreen.propTypes = {
+    animated: PropTypes.bool,
+    custom: PropTypes.any,
 };

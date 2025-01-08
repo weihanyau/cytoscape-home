@@ -1,10 +1,10 @@
 'use client';
 
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { Container } from '@/components/base/Container';
 import clsx from 'clsx';
 import { useInView } from 'framer-motion';
 import PropTypes from 'prop-types';
-import { Container } from '@/components/base/Container';
+import { useMemo, useRef } from 'react';
 
 const citations = [
     {

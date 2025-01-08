@@ -1,11 +1,10 @@
-import PropTypes from 'prop-types';
-import { useEffect, useRef, useState } from 'react';
-import GeneManiaLogo from '@/images/logos/gene-mania.svg';
-import { ArrowTopRightOnSquareIcon, ExclamationTriangleIcon } from '@heroicons/react/20/solid';
 import { LinkButton } from '@/components/base/Button';
 import { LoadingMessage } from '@/components/base/Loading';
-import Cytoscape from 'cytoscape';
-import { fetchGeneManiaNetwork, createCytoscape } from '../utilities/geneManiaUtils';
+import GeneManiaLogo from '@/images/logos/gene-mania.svg';
+import { ArrowTopRightOnSquareIcon, ExclamationTriangleIcon } from '@heroicons/react/20/solid';
+import PropTypes from 'prop-types';
+import { useEffect, useRef, useState } from 'react';
+import { createCytoscape, fetchGeneManiaNetwork } from '../utilities/geneManiaUtils';
 
 const GeneManiaCard = ({ genes, organism }) => {
     const [data, setData] = useState();
